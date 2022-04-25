@@ -38,16 +38,22 @@
 
         <h1>CHECK24 Blog</h1>
         <table style="margin-left: auto; margin-right: auto;">
+
+        <th>Post Body</th>
+        <th>Post Date</th>
+        <th>Post Author</th>
             <?php foreach ($data['result'] as $post) : ?>
 
                 <tr>
-                    <td><?= substr($post->body, 0, 100) . (strlen($post->body) > strlen(substr($post->body, 0, 100)) ? '...' : ''); ?></td>
+                    <td><?= substr($post['body'], 0, 100) . (strlen($post['body']) > strlen(substr($post['body'], 0, 100)) ? '...' : ''); ?></td>
+                    <td><?= $post['created']?></td>
+                    <td><?= $post['email']?></td>
                 </tr>
             <?php endforeach; ?>
         </table>
 
 
-        <?php $postsCount = (int) $data['count'][0]->count;
+        <?php $postsCount = (int) $data['count'][0]['count'];
         if ($postsCount > 3) {
 
             echo '<hr> <div class="pagination">';

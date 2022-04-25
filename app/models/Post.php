@@ -10,7 +10,7 @@ class Post
 
     public function getPosts($offset = 0, $count = 3)
     {
-        $this->db->query("SELECT * FROM posts ORDER BY created DESC LIMIT $count OFFSET " . $offset * $count);
+        $this->db->query("SELECT * FROM posts p LEFT JOIN users u on p.user_id = p.id ORDER BY created DESC LIMIT $count OFFSET " . $offset * $count);
         
         $result = $this->db->resultSet();
 
