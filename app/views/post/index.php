@@ -20,10 +20,10 @@
             text-align: center;
             padding: 8px;
         }
-
+/* 
         tr:nth-child(even) {
             background-color: #dddddd;
-        }
+        } */
     </style>
 </head>
 
@@ -48,6 +48,10 @@
                     <td><?= substr($post['body'], 0, 100) . (strlen($post['body']) > strlen(substr($post['body'], 0, 100)) ? '...' : ''); ?></td>
                     <td><?= $post['created']?></td>
                     <td><?= $post['email']?></td>
+                    <td style="height: fit-content;">
+                    <img src="<?= URLROOT ?>/public/img<?= $post['image_path']?>" width="200" height="140" alt="Logo">
+    
+                    </td>
                 </tr>
             <?php endforeach; ?>
         </table>
