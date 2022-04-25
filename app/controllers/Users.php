@@ -40,8 +40,10 @@ class Users extends Controller
     public function logout()
     {
         $_SESSION["authenticated"] = false;
-        session_destroy();
-        header('Location: login.php');
+        if (isset($_COOKIE["PHPSESSID"])) {
+            session_destroy();
+        }
+        header('Location:' . URLROOT . '/users/login');
     }
 
     public function add()

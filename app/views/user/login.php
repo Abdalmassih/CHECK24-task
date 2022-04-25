@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <title>Creating a simple to-do application - Part 1</title>
+    <title>CHECK42 Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
