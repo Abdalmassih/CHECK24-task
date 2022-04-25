@@ -42,11 +42,13 @@ class Users extends Controller
         $_SESSION["authenticated"] = false;
         if (isset($_COOKIE["PHPSESSID"])) {
             session_destroy();
+            $_COOKIE['PHPSESSID'] = false;
         }
         header('Location:' . URLROOT . '/users/login');
     }
 
-    public function add()
+    public function register()
     {
+
     }
 }

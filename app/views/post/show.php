@@ -44,6 +44,25 @@
 
     </div>
 
+    <?php
+    if (isset($_COOKIE["PHPSESSID"])) : ?>
+
+        <h2>Leave a comment below...</h2>
+        <section id="content">
+            <form id="comment" method="post" >
+                <input id="name" name="name" type="text" placeholder="name" required><br>
+                <input id="email" name="email" placeholder="password" type="password"><br>
+                <input id="url" name="url" placeholder="url" type="url"><br>
+                <textarea name="comment" id="comm" cols="30" rows="10" placeholder="comment" required></textarea><br>
+                <br />
+                <input type="submit" value="Comment">
+            </form>
+        </section>
+
+    <?php endif; ?>
+
+
+
 
 </body>
 
