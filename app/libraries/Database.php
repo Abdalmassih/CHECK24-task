@@ -54,7 +54,7 @@
         //Return an array
         public function resultSet() {
             $this->execute();
-            return $this->statement->fetchAll(PDO::FETCH_ASSOC);
+            return $this->statement->fetchAll(PDO::FETCH_NAMED);
         }
 
         //Return a specific row as an object

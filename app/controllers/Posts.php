@@ -19,4 +19,11 @@ class Posts extends Controller {
         $posts = $this->postsModel->getPosts();
         return $posts;
     }
+
+    public function show($id)
+    {
+        $post = $this->postsModel->find($id);
+
+        $this->view('post/show', $post);
+    }
 }

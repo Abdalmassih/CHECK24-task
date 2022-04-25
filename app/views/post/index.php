@@ -20,7 +20,8 @@
             text-align: center;
             padding: 8px;
         }
-/* 
+
+        /* 
         tr:nth-child(even) {
             background-color: #dddddd;
         } */
@@ -39,18 +40,23 @@
         <h1>CHECK24 Blog</h1>
         <table style="margin-left: auto; margin-right: auto;">
 
-        <th>Post Body</th>
-        <th>Post Date</th>
-        <th>Post Author</th>
+            <th>Post Body</th>
+            <th>Post Date</th>
+            <th>Post Author</th>
             <?php foreach ($data['result'] as $post) : ?>
 
                 <tr>
-                    <td><?= substr($post['body'], 0, 100) . (strlen($post['body']) > strlen(substr($post['body'], 0, 100)) ? '...' : ''); ?></td>
-                    <td><?= $post['created']?></td>
-                    <td><?= $post['email']?></td>
+                    <td>
+
+                        <a href="<?= URLROOT ?>/posts/show/<?= $post['id'][0] ?>">
+                            <?= substr($post['body'], 0, 100) . (strlen($post['body']) > strlen(substr($post['body'], 0, 100)) ? '...' : ''); ?>
+                        </a>
+                    </td>
+                    <td><?= $post['created'] ?></td>
+                    <td><?= $post['email'] ?></td>
                     <td style="height: fit-content;">
-                    <img src="<?= URLROOT ?>/public/img<?= $post['image_path']?>" width="200" height="140" alt="Logo">
-    
+                        <img src="<?= URLROOT ?>/public/img<?= $post['image_path'] ?>" width="200" height="140" alt="Logo">
+
                     </td>
                 </tr>
             <?php endforeach; ?>
